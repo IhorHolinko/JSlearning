@@ -145,23 +145,42 @@
 
 // alert(`Hey, ${user}`);
 
-let incr = 10,
-    decr = 10;
+// let incr = 10,
+//     decr = 10;
 
 // incr++; 
 // decr--;
 
-console.log(++incr);
-console.log(--decr);
+// console.log(++incr);
+// console.log(--decr);
 
-console.log(5%2);
+// console.log(5%2);
 
-console.log(2 + 2 * 2 === 8);
+// console.log(2 + 2 * 2 === 8);
 
 
-const isChecked = true,
-    isClose = false;
+// const isChecked = true,
+//     isClose = false;
 
 // console.log(isChecked || isClose); - or
 // console.log(isChecked && isClose); - and
+
+const numberOfFilms = +prompt(`How many films have you seen?`, ``);
+const personaMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genders: [],
+    private: false,
+};
+
+const a = prompt(`What is one of last films, which you have seen`, ``),
+        b = prompt(`What is your mark for this film?`, ``),
+        c = prompt(`What is one of last films, which you have seen`, ``),
+        d = prompt(`What is your mark for this film?`, ``);
+
+personaMovieDB.movies[a] = b;
+personaMovieDB.movies[c] = d;
+
+console.log(personaMovieDB);
 
