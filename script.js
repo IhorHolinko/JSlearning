@@ -165,14 +165,14 @@
 // console.log(isChecked || isClose); - or
 // console.log(isChecked && isClose); - and
 
-// const numberOfFilms = +prompt(`How many films have you seen?`, ``);
-// const personaMovieDB = {
-//     count: numberOfFilms,
-//     movies: {},
-//     actors: {},
-//     genders: [],
-//     private: false,
-// };
+const numberOfFilms = +prompt(`How many films have you seen?`, ``);
+const personaMovieDB = {
+    count: numberOfFilms,
+    movies: {},
+    actors: {},
+    genders: [],
+    private: false,
+};
 
 // const a = prompt(`What is one of last films, which you have seen`, ``),
 //         b = prompt(`What is your mark for this film?`, ``),
@@ -182,7 +182,32 @@
 // personaMovieDB.movies[a] = b;
 // personaMovieDB.movies[c] = d;
 
-// console.log(personaMovieDB);
+
+for (let i = 0; i < 2; i++) {
+    const a = prompt(`What is one of last films, which you have seen`, ``),
+            b = prompt(`What is your mark for this film?`, ``);
+
+    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+        personaMovieDB.movies[a] = b;
+        console.log('done');
+    } else {
+        console.log('error');
+        i--;
+    }
+}
+
+if (personaMovieDB.count < 10) {
+    console.log('You have seen too little films!');
+} else if (personaMovieDB.count >= 10 && personaMovieDB.count < 30) {
+    console.log('Wonderful! Too many films!');
+} else if (personaMovieDB.count >= 30) {
+    console.log('You are kinoman');
+} else {
+    console.log('Mistake');
+}
+
+console.log(personaMovieDB);
+
 
 // let num = 50;
 // if (num <49) {
@@ -312,19 +337,18 @@
 // ******
 
 
-let result = '';
-const leng = 7;
+// let result = '';
+// const leng = 7;
 
-for (let i =1; i<leng; i++) {
-    console.log(`First level: ${i}`);
-    for (let j = 0; j<i; j++) {
-        console.log(`Second level: ${j}`);
-        result += "*";
-        for (let k = 0; k<i; k++) {
-            console.log(`Third level: ${k}`);
-            result += "*";
-        }
-    }
-    result += '\n';
-}
-console.log(result);
+// first: for (let i = 0; i<3; i++) {
+//     console.log(`First level: ${i}`);
+//     for (let j = 0; j<3; j++) {
+//         console.log(`Second level: ${j}`);
+//         for (let k = 0; k<3; k++) {
+//             if (k === 2) continue first;
+//             console.log(`Third level: ${k}`);
+//         }
+//     }
+// }
+// console.log(result);
+
