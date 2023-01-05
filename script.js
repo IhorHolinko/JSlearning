@@ -293,16 +293,16 @@
 //     }
 // }
 
-let result = '';
-const leng = 7;
+// let result = '';
+// const leng = 7;
 
-for (let i =1; i<leng; i++) {
-    for (let j = 0; j<i; j++) {
-        result += "*";
-    }
-    result += '\n';
-}
-console.log(result);
+// for (let i =1; i<leng; i++) {
+//     for (let j = 0; j<i; j++) {
+//         result += "*";
+//     }
+//     result += '\n';
+// }
+// console.log(result);
 
 // *
 // **
@@ -316,8 +316,14 @@ let result = '';
 const leng = 7;
 
 for (let i =1; i<leng; i++) {
+    console.log(`First level: ${i}`);
     for (let j = 0; j<i; j++) {
+        console.log(`Second level: ${j}`);
         result += "*";
+        for (let k = 0; k<i; k++) {
+            console.log(`Third level: ${k}`);
+            result += "*";
+        }
     }
     result += '\n';
 }
