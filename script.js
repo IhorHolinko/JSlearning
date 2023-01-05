@@ -165,24 +165,24 @@
 // console.log(isChecked || isClose); - or
 // console.log(isChecked && isClose); - and
 
-const numberOfFilms = +prompt(`How many films have you seen?`, ``);
-const personaMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genders: [],
-    private: false,
-};
+// const numberOfFilms = +prompt(`How many films have you seen?`, ``);
+// const personaMovieDB = {
+//     count: numberOfFilms,
+//     movies: {},
+//     actors: {},
+//     genders: [],
+//     private: false,
+// };
 
-const a = prompt(`What is one of last films, which you have seen`, ``),
-        b = prompt(`What is your mark for this film?`, ``),
-        c = prompt(`What is one of last films, which you have seen`, ``),
-        d = prompt(`What is your mark for this film?`, ``);
+// const a = prompt(`What is one of last films, which you have seen`, ``),
+//         b = prompt(`What is your mark for this film?`, ``),
+//         c = prompt(`What is one of last films, which you have seen`, ``),
+//         d = prompt(`What is your mark for this film?`, ``);
 
-personaMovieDB.movies[a] = b;
-personaMovieDB.movies[c] = d;
+// personaMovieDB.movies[a] = b;
+// personaMovieDB.movies[c] = d;
 
-console.log(personaMovieDB);
+// console.log(personaMovieDB);
 
 // let num = 50;
 // if (num <49) {
@@ -240,17 +240,85 @@ console.log(personaMovieDB);
 // console.log(null && 0);
 // console.log(0 && 'sdfjkldsfladjvckajoik');
 
-const hamburger = 2;
-const fries = 3;
-const cola = 2;
-const nuggets = 2;
+// const hamburger = 2;
+// const fries = 3;
+// const cola = 2;
+// const nuggets = 2;
 
-if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
-    console.log('we will stay!');
-} else {
-    console.log('Go home!');
+// if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+//     console.log('we will stay!');
+// } else {
+//     console.log('Go home!');
+// }
+
+// console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
+
+// let num = 50;
+
+// while (num < 55) {
+//     console.log(num);
+//     num++;
+// }
+
+// do {
+//     console.log(num);
+//     num++;
+
+// }
+// while (num<55);
+
+// for (let i = 1; i<8; i++) {
+//     console.log(i);
+// }
+
+// let num = 50;
+// for (let i = 1; i<8; i++) {
+//     console.log(num);
+//     num++;
+// }
+
+// for (let i = 1; i<8; i++) {
+//     if (i === 6) {
+//         // break;
+//         continue;
+//     }
+//     console.log(i);
+// }
+
+
+// for (let i = 1; i<3; i++) {
+//     console.log(i);
+//     for (let j = 0; j<3; j++) {
+//         console.log(j);
+//     }
+// }
+
+let result = '';
+const leng = 7;
+
+for (let i =1; i<leng; i++) {
+    for (let j = 0; j<i; j++) {
+        result += "*";
+    }
+    result += '\n';
 }
+console.log(result);
 
-console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
+// *
+// **
+// ***
+// ****
+// *****
+// ******
 
 
+let result = '';
+const leng = 7;
+
+for (let i =1; i<leng; i++) {
+    for (let j = 0; j<i; j++) {
+        result += "*";
+    }
+    result += '\n';
+}
+console.log(result);
