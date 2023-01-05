@@ -184,3 +184,73 @@ personaMovieDB.movies[c] = d;
 
 console.log(personaMovieDB);
 
+// let num = 50;
+// if (num <49) {
+//     console.log('Error!');
+// } else if (num>100) {
+//     console.log('Error again');
+// } else {
+//     console.log('Ok!');
+// }
+
+
+// let num = 50;
+// (num === 50) ? console.log('Ok!') : console.log('Error');
+
+// switch (num) {
+//     case 49:
+//         console.log('Wrong');
+//         break;
+//     case 100:
+//         console.log('Wrong');
+//         break;
+//     case 50:
+//         console.log('Yes');
+//         break;
+//     default:
+//         console.log('Wrong again');
+//         break;
+// }
+
+// const hamburger = true;
+// const fries = true;
+
+// if (hamburger && fries) {
+//     console.log('I`m full!');
+// }
+
+// console.log((hamburger && fries));
+
+// const hamburger = 2;
+// const fries = 1;
+// const cola = 0;
+
+// console.log(hamburger === 3 && cola && fries);
+
+// if (hamburger === 3 && cola ===1 && fries) {
+//     console.log('I`m full!');
+// } else {
+//     console.log('Go home!');
+// }
+
+// console.log((hamburger && fries));
+
+// console.log(1 && 0);
+// console.log(1 && 5);
+// console.log(null && 0);
+// console.log(0 && 'sdfjkldsfladjvckajoik');
+
+const hamburger = 2;
+const fries = 3;
+const cola = 2;
+const nuggets = 2;
+
+if (hamburger === 3 && cola === 2 || fries === 3 && nuggets) {
+    console.log('we will stay!');
+} else {
+    console.log('Go home!');
+}
+
+console.log(hamburger === 3 && cola === 2 || fries === 3 && nuggets);
+
+
