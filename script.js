@@ -164,8 +164,17 @@
 
 // console.log(isChecked || isClose); - or
 // console.log(isChecked && isClose); - and
+let numberOfFilms;
+function start() {
+    numberOfFilms = +prompt(`How many films have you seen?`, ``);
 
-const numberOfFilms = +prompt(`How many films have you seen?`, ``);
+    while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+        numberOfFilms = +prompt(`How many films have you seen?`, ``);
+    }
+}
+
+start();
+
 const personaMovieDB = {
     count: numberOfFilms,
     movies: {},
@@ -182,29 +191,54 @@ const personaMovieDB = {
 // personaMovieDB.movies[a] = b;
 // personaMovieDB.movies[c] = d;
 
-
-for (let i = 0; i < 2; i++) {
-    const a = prompt(`What is one of last films, which you have seen`, ``),
-            b = prompt(`What is your mark for this film?`, ``);
-
-    if (a != null && b != null && a != '' && b != '' && a.length < 50) {
-        personaMovieDB.movies[a] = b;
-        console.log('done');
-    } else {
-        console.log('error');
-        i--;
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt(`What is one of last films, which you have seen`, ``),
+                b = prompt(`What is your mark for this film?`, ``);
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+            personaMovieDB.movies[a] = b;
+            console.log('done');
+        } else {
+            console.log('error');
+            i--;
+        }
     }
 }
 
-if (personaMovieDB.count < 10) {
-    console.log('You have seen too little films!');
-} else if (personaMovieDB.count >= 10 && personaMovieDB.count < 30) {
-    console.log('Wonderful! Too many films!');
-} else if (personaMovieDB.count >= 30) {
-    console.log('You are kinoman');
-} else {
-    console.log('Mistake');
+rememberMyFilms();
+
+
+function detectPersonalLevel() {
+    if (personaMovieDB.count < 10) {
+        console.log('You have seen too little films!');
+    } else if (personaMovieDB.count >= 10 && personaMovieDB.count < 30) {
+        console.log('Wonderful! Too many films!');
+    } else if (personaMovieDB.count >= 30) {
+        console.log('You are kinoman');
+    } else {
+        console.log('Mistake');
+    }
 }
+
+detectPersonalLevel();
+
+function showMyDB(hidden) {
+    if (!hidden) {
+        console.log(personaMovieDB);
+    }
+}
+
+showMyDB(personaMovieDB.private);
+
+function writeYourGenres() {
+    for (let i = 1; i <= 3; i++) {
+        personaMovieDB.genders[i - 1] = prompt(`Your favourite genre under number ${i}`);
+    }
+}
+
+writeYourGenres();
+
 
 console.log(personaMovieDB);
 
@@ -359,30 +393,28 @@ console.log(personaMovieDB);
 
 // showFirstMessage();
 
-const usdCurr = 28;
-const discount = 0.9;
+// const usdCurr = 28;
+// const discount = 0.9;
 
-function convert(amount, curr) {
-    return curr * amount;
-}
+// function convert(amount, curr) {
+//     return curr * amount;
+// }
 
-function promotion(result) {
-    console.log(result * discount);
-    return function() {}
-}
+// function promotion(result) {
+//     console.log(result * discount);
+//     return function() {}
+// }
 
-const res = convert(500, usdCurr);
-promotion(res);
+// const res = convert(500, usdCurr);
+// promotion(res);
 
 
 
-function test() {
-    for (let i = 0; i < 5; i++) {
-        console.log(i);
-        if (i === 3) {
-            return undefined;
-        }
-    }
-    console.log('done');
-}
-test();
+// function test() {
+//     for (let i = 0; i < 5; i++) {
+//         console.log(i);
+//         if (i === 3) return;
+//     }
+//     console.log('done');
+// }
+// test();
