@@ -166,10 +166,10 @@
 // console.log(isChecked && isClose); - and
 let numberOfFilms;
 function start() {
-    numberOfFilms = +prompt(`How many films have you seen?`, ``);
+    numberOfFilms = +prompt(`How many films have you seen?`, ``).trim();
 
     while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
-        numberOfFilms = +prompt(`How many films have you seen?`, ``);
+        numberOfFilms = +prompt(`How many films have you seen?`, ``).trim();
     }
 }
 
@@ -193,8 +193,8 @@ const personaMovieDB = {
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        const a = prompt(`What is one of last films, which you have seen`, ``),
-                b = prompt(`What is your mark for this film?`, ``);
+        const a = prompt(`What is one of last films, which you have seen`, ``).trim(),
+                b = prompt(`What is your mark for this film?`, ``).trim();
     
         if (a != null && b != null && a != '' && b != '' && a.length < 50) {
             personaMovieDB.movies[a] = b;
@@ -448,3 +448,27 @@ console.log(personaMovieDB);
 //     return str
 
 // }
+
+// function first() {
+//     setTimeout(function() {
+//         console.log(1);
+//     }, 500);
+// }
+
+// function second() {
+//     console.log(2);
+// }
+
+// first();
+// second();
+
+function learnJS(lang, callback) {
+    console.log(`I' study ${lang}`);
+    callback();
+}
+
+function done() {
+    console.log('I have finished this lesson');
+}
+
+learnJS('JavaScript', done);
