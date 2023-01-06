@@ -462,13 +462,56 @@ console.log(personaMovieDB);
 // first();
 // second();
 
-function learnJS(lang, callback) {
-    console.log(`I' study ${lang}`);
-    callback();
+// function learnJS(lang, callback) {
+//     console.log(`I' study ${lang}`);
+//     callback();
+// }
+
+// function done() {
+//     console.log('I have finished this lesson');
+// }
+
+// learnJS('JavaScript', done);
+
+const options = {
+    name: 'test',
+    width: 1024,
+    heigth: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    },
+    makeTest: function() {
+        console.log('Test');
+    }
+};
+
+options.makeTest();
+
+const {border, bg} = options.colors;
+
+console.log(border);
+
+
+// console.log(Object.keys(options).length);
+
+// console.log(options.name);
+
+// delete options.name;
+
+// console.log(options);
+
+let counter = 0;
+for (let key in options) {
+    if (typeof(options[key]) === 'object') {
+        for (let i in options[key]) {
+            console.log(`Options ${i} have meaning ${options[key][i]}`);
+            counter++;
+        }
+    } else {
+    console.log(`Options ${key} have meaning ${options[key]}`);
+    counter++;
+    }
 }
 
-function done() {
-    console.log('I have finished this lesson');
-}
-
-learnJS('JavaScript', done);
+console.log(counter);
