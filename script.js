@@ -473,24 +473,24 @@ console.log(personaMovieDB);
 
 // learnJS('JavaScript', done);
 
-const options = {
-    name: 'test',
-    width: 1024,
-    heigth: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    },
-    makeTest: function() {
-        console.log('Test');
-    }
-};
+// const options = {
+//     name: 'test',
+//     width: 1024,
+//     heigth: 1024,
+//     colors: {
+//         border: 'black',
+//         bg: 'red'
+//     },
+//     makeTest: function() {
+//         console.log('Test');
+//     }
+// };
 
-options.makeTest();
+// options.makeTest();
 
-const {border, bg} = options.colors;
+// const {border, bg} = options.colors;
 
-console.log(border);
+// console.log(border);
 
 
 // console.log(Object.keys(options).length);
@@ -501,17 +501,119 @@ console.log(border);
 
 // console.log(options);
 
-let counter = 0;
-for (let key in options) {
-    if (typeof(options[key]) === 'object') {
-        for (let i in options[key]) {
-            console.log(`Options ${i} have meaning ${options[key][i]}`);
-            counter++;
-        }
-    } else {
-    console.log(`Options ${key} have meaning ${options[key]}`);
-    counter++;
+// let counter = 0;
+// for (let key in options) {
+//     if (typeof(options[key]) === 'object') {
+//         for (let i in options[key]) {
+//             console.log(`Options ${i} have meaning ${options[key][i]}`);
+//             counter++;
+//         }
+//     } else {
+//     console.log(`Options ${key} have meaning ${options[key]}`);
+//     counter++;
+//     }
+// }
+
+// console.log(counter);
+
+
+// const arr = [1, 2, 4, 6, 8];
+
+// arr.pop();
+// arr.push(10);
+
+// for (let i = 0; i < arr.length; i++) {
+//     console.log(arr[i]);
+// }
+
+// for (let value of arr) {
+//     console.log(value);
+// }
+
+// arr.forEach(function(item, i, arr) {
+//     console.log(`${i}: ${item} inside arrey ${arr}`);
+// });
+
+// const str = prompt ('', '');
+// const products = str.split(', ');
+// products.sort(compareNum);
+// console.log(products.join('; '));
+
+// function compareNum(a, b) {
+//     return a - b;
+// }
+
+
+
+function copy(mainObj) {
+    let objCopy = {};
+    let key;
+    for (key in mainObj) {
+        objCopy[key] = mainObj[key];
     }
+
+    return objCopy;
 }
 
-console.log(counter);
+const numbers = {
+    a: 4,
+    b: 5,
+    c: {
+        x: 7,
+        y: 4
+    }
+};
+// const newNumbers = copy(numbers);
+
+// newNumbers.a = 10;
+
+// console.log(newNumbers);
+// console.log(numbers);
+
+const add = {
+    r: 17,
+    i: 20,
+};
+
+const clone = Object.assign({}, add);
+// console.log(Object.assign(numbers, add));
+
+clone.r = 20;
+
+console.log(add);
+console.log(clone);
+
+const oldArray = ['a', 'b', 'c'];
+const newArrey = oldArray.slice();
+
+newArrey[1] = 'dskjlsc';
+console.log(oldArray);
+console.log(newArrey);
+
+const video = ['youtube', 'vimeo', 'rutube'],
+    blogs = ['wordpress', 'livejournal', 'blogger'],
+    internet = [...video, ...blogs, 'bk', 'facebook'];
+
+console.log(internet);
+
+function log(a, b, c) {
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+}
+
+const num = [2, 5, 7];
+
+log(...num);
+
+const array = ['a', 'b'];
+
+const newArr = [...array];
+
+const neww = {
+    one: 1,
+    two: 2,
+    three: 3
+};
+const newWew = {...neww};
