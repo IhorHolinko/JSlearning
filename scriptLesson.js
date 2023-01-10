@@ -540,20 +540,20 @@
 // };
 // const newWew = {...neww};
 
-let str = "some";
-let strObj = new String(str);
+// let str = "some";
+// let strObj = new String(str);
 
-console.log([1, 2, 3]);
+// console.log([1, 2, 3]);
 
-const soldier = {
-    health: 400,
-    armour: 100,
-    sayHello: function() {
-        console.log("Hello");
-    }
-};
+// const soldier = {
+//     health: 400,
+//     armour: 100,
+//     sayHello: function() {
+//         console.log("Hello");
+//     }
+// };
 
-const john = Object.create(soldier);
+// const john = Object.create(soldier);
 
 // const john = {
 //     health: 100
@@ -564,3 +564,43 @@ const john = Object.create(soldier);
 // john.__proto__ = soldier; - старый формат  обьединения данных
 
 
+// 1) Превратить в строку:
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+
+console.log(typeof(5 + ''));
+console.log(typeof(null + ''));
+
+const num = 5;
+
+console.log("https://facebook.com/catalog/" + num);
+
+const fontSize = 26 + "px";
+
+// 2) Превратить в число:
+console.log(typeof(Number("4")));
+
+console.log(typeof(+"4"));
+console.log(typeof(parseInt("15px", 10)));
+
+let answ = +prompt("Hello", "");
+
+// 3) Превратить в булиновое значение:
+
+// 0, '', null, undefined, NaN - false!!!
+
+let switcher = null;
+
+if (switcher) {
+    console.log('Working...');
+}
+
+switcher = 1;
+
+if (switcher) {
+    console.log('Working...');
+}
+
+console.log(typeof(Boolean("4")));
+
+console.log(typeof(!!"1klasdmjweodjm3"));
