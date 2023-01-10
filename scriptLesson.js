@@ -565,42 +565,101 @@
 
 
 // 1) Превратить в строку:
-console.log(typeof(String(null)));
-console.log(typeof(String(4)));
+// console.log(typeof(String(null)));
+// console.log(typeof(String(4)));
 
-console.log(typeof(5 + ''));
-console.log(typeof(null + ''));
+// console.log(typeof(5 + ''));
+// console.log(typeof(null + ''));
 
-const num = 5;
+// const num = 5;
 
-console.log("https://facebook.com/catalog/" + num);
+// console.log("https://facebook.com/catalog/" + num);
 
-const fontSize = 26 + "px";
+// const fontSize = 26 + "px";
 
 // 2) Превратить в число:
-console.log(typeof(Number("4")));
+// console.log(typeof(Number("4")));
 
-console.log(typeof(+"4"));
-console.log(typeof(parseInt("15px", 10)));
+// console.log(typeof(+"4"));
+// console.log(typeof(parseInt("15px", 10)));
 
-let answ = +prompt("Hello", "");
+// let answ = +prompt("Hello", "");
 
 // 3) Превратить в булиновое значение:
 
 // 0, '', null, undefined, NaN - false!!!
 
-let switcher = null;
+// let switcher = null;
 
-if (switcher) {
-    console.log('Working...');
-}
+// if (switcher) {
+//     console.log('Working...');
+// }
 
-switcher = 1;
+// switcher = 1;
 
-if (switcher) {
-    console.log('Working...');
-}
+// if (switcher) {
+//     console.log('Working...');
+// }
 
-console.log(typeof(Boolean("4")));
+// console.log(typeof(Boolean("4")));
 
-console.log(typeof(!!"1klasdmjweodjm3"));
+// console.log(typeof(!!"1klasdmjweodjm3"));
+
+// let number = 5; debugger
+
+// function logNumber() {
+//     let number = 6; debugger
+//     console.log(number);
+// }
+
+// number = 4
+
+// logNumber(); debugger
+
+// function createCounter() {
+//     let counter = 0;
+
+//     const myFunction = function() {
+//         counter = counter + 1;
+//         return counter;
+//     };
+//     return myFunction;
+// }
+
+// const increment = createCounter();
+// const c1 = increment();
+// const c2 = increment();
+// const c3 = increment();
+
+// console.log(c1, c2, c3);
+
+// let x = 5; alert( x++ ) = 5;
+
+// console.log([ ] + false - null + true) = NaN;
+
+// let y = 1; 
+// let x = y = 2; 
+// alert(x); = 2;
+
+// console.log([ ] + 1 + 2); = 12;
+
+// alert( "1"[0] ); = 1
+
+// console.log(2 && 1 && null && 0 && undefined); = null
+
+// console.log(!!( a && b )); false to each other
+// console.log(a && b); false to each other
+
+// alert( null || 2 && 3 || 4 ); = 3
+
+// let a = [1, 2, 3]; 
+// let b = [1, 2, 3];
+// console.log(a == b); = false
+
+// alert( +"Infinity" ); = Infinity
+
+// let a = "Ёжик";
+// let b = "яблоко";
+// console.log(a>b); = false
+
+// console.log(0 || "" || 2 || undefined || true || falsе); = 2
