@@ -665,56 +665,106 @@
 // console.log(0 || "" || 2 || undefined || true || falsе); = 2
 
 
-const restorantData = {
-    menu: [
-        {
-            name: 'Salad Caesar',
-            price: '14$'
-        },
-        {
-            name: 'Pizza Diavola',
-            price: '9$'
-        },
-        {
-            name: 'Beefsteak',
-            price: '17$'
-        },
-        {
-            name: 'Napoleon',
-            price: '7$'
-        }
-    ],
-    waitors: [
-        {name: 'Alice', age: 22}, {name: 'John', age: 24}
-    ],
-    averageLunchPrice: '20$',
-    openNow: true
+// const restorantData = {
+//     menu: [
+//         {
+//             name: 'Salad Caesar',
+//             price: '14$'
+//         },
+//         {
+//             name: 'Pizza Diavola',
+//             price: '9$'
+//         },
+//         {
+//             name: 'Beefsteak',
+//             price: '17$'
+//         },
+//         {
+//             name: 'Napoleon',
+//             price: '7$'
+//         }
+//     ],
+//     waitors: [
+//         {name: 'Alice', age: 22}, {name: 'John', age: 24}
+//     ],
+//     averageLunchPrice: '20$',
+//     openNow: true
+// };
+
+// function isOpen(prop) {
+//     let answer = '';
+//     prop ? answer = 'Открыто' : answer = 'Закрыто';
+
+//     return answer;
+// }
+
+// console.log(isOpen(restorantData.openNow));
+
+// function isAverageLunchPriceTrue(fDish, sDish, average) {
+//     if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
+//         return 'Цена ниже средней';
+//     } else {
+//         return 'Цена выше средней';
+//     }
+// }
+
+// console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+
+// function transferWaitors(data) {
+//     const copy = Object.assign({}, data);
+
+//     copy.waitors = [{name: 'Mike', age: 32}];
+//     return copy;
+// }
+
+// transferWaitors(restorantData);
+
+const btn = document.querySelector('button');
+
+// btn.onclick = function() {
+//     alert('Click');
+// };
+
+
+btn.addEventListener('click', () => {
+    alert('Click');
+});
+
+btn.addEventListener('click', () => {
+    alert('Second click');
+});
+
+btn.addEventListener('mouseenter', (e) => {
+    // console.log(e.target);
+    // alert('Click');
+});
+
+
+let i = 0;
+const deleteElement = (e) => {
+    console.log(e.target);
+    i++;
+    if (i==1) {
+        btn.removeEventListener('click', deleteElement);
+    }   
 };
 
-function isOpen(prop) {
-    let answer = '';
-    prop ? answer = 'Открыто' : answer = 'Закрыто';
+btn.addEventListener('click', deleteElement);
+btn.removeEventListener('click', deleteElement);
 
-    return answer;
-}
 
-console.log(isOpen(restorantData.openNow));
+// const btn = document.querySelector('button');
+//     overlay = document.querySelector('.overlay');
 
-function isAverageLunchPriceTrue(fDish, sDish, average) {
-    if (+fDish.price.slice(0, -1) + (+sDish.price.slice(0, -1)) < +average.slice(0, -1)) {
-        return 'Цена ниже средней';
-    } else {
-        return 'Цена выше средней';
-    }
-}
 
-console.log(isAverageLunchPriceTrue(restorantData.menu[0], restorantData.menu[1], restorantData.averageLunchPrice));
+const link = document.querySelector('a');
 
-function transferWaitors(data) {
-    const copy = Object.assign({}, data);
+link.addEventListener('click', function(event) {
+    event.preventDefault();
 
-    copy.waitors = [{name: 'Mike', age: 32}];
-    return copy;
-}
+    console.log(event.target);
+});
 
-transferWaitors(restorantData);
+// btns.forEach(btn => {
+//     btn.addEventListener('click', deleteElement, {once: true});
+// });
