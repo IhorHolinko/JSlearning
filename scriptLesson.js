@@ -719,52 +719,151 @@
 
 // transferWaitors(restorantData);
 
-const btn = document.querySelector('button');
+// const btn = document.querySelector('button');
 
 // btn.onclick = function() {
 //     alert('Click');
 // };
 
 
-btn.addEventListener('click', () => {
-    alert('Click');
-});
+// btn.addEventListener('click', () => {
+//     alert('Click');
+// });
 
-btn.addEventListener('click', () => {
-    alert('Second click');
-});
+// btn.addEventListener('click', () => {
+//     alert('Second click');
+// });
 
-btn.addEventListener('mouseenter', (e) => {
+// btn.addEventListener('mouseenter', (e) => {
     // console.log(e.target);
     // alert('Click');
-});
+// });
 
 
-let i = 0;
-const deleteElement = (e) => {
-    console.log(e.target);
-    i++;
-    if (i==1) {
-        btn.removeEventListener('click', deleteElement);
-    }   
-};
+// let i = 0;
+// const deleteElement = (e) => {
+//     console.log(e.target);
+//     i++;
+//     if (i==1) {
+//         btn.removeEventListener('click', deleteElement);
+//     }   
+// };
 
-btn.addEventListener('click', deleteElement);
-btn.removeEventListener('click', deleteElement);
+// btn.addEventListener('click', deleteElement);
+// btn.removeEventListener('click', deleteElement);
 
 
 // const btn = document.querySelector('button');
 //     overlay = document.querySelector('.overlay');
 
 
-const link = document.querySelector('a');
+// const link = document.querySelector('a');
 
-link.addEventListener('click', function(event) {
-    event.preventDefault();
+// link.addEventListener('click', function(event) {
+//     event.preventDefault();
 
-    console.log(event.target);
-});
+//     console.log(event.target);
+// });
 
 // btns.forEach(btn => {
 //     btn.addEventListener('click', deleteElement, {once: true});
 // });
+
+
+// console.log(document.head);
+// console.log(document.documentElementElement);
+// console.log(document.body.childNodes);
+
+// console.log(document.body.firstChild);
+// console.log(document.body.lastChild);
+
+// console.log(document.body.firstElementChild);
+
+
+// console.log(document.querySelector('#current').parentNode.parentNode);
+
+// console.log(document.querySelector('[data-current="3"]').nextSibling);
+
+// console.log(document.querySelector('[data-current="3"]').previousSibling);
+
+// console.log(document.querySelector('[data-current="3"]').nextElementSibling);
+
+// console.log(document.querySelector('#current').parentElement);
+
+// 
+
+function pow(x, n) {
+    let resualt = 1;
+
+    for (let i = 0; i < n; i++) {
+        resualt *= x;
+    }
+    return resualt;
+}
+
+function pow(x, n) {
+    if (n === 1) {
+        return x;
+    } else {
+        return x * pow(x, n - 1);
+    }
+}
+
+console.log(pow(2, 2));
+
+pow(2, 3);
+
+pow(2, 4);
+
+
+function getSomething(data) {
+    let total = 0;
+    let students = 0;
+
+    for (let course of Object.values(data)) {
+        if (Array.isArray(course)) {
+            students += course.length;
+            
+            for (let i = 0; i < course.length; i++) {
+                total += course[i].progress;
+            }
+        } else {
+            for (let subCourse of Object.values(course)) {
+                students += subCourse.length;
+                for (let i = 0; i < subCourse.length; i++) {
+                    total += subCourse[i].progress;
+                }
+            }
+        }
+    }
+
+    return total / students;
+}
+
+console.log(getSomething(students));
+
+
+function getSomeInformation(data) {
+    if (Array.isArray(data)) {
+        let total = 0;
+                
+        for (let i = 0; i < data.length; i++) {
+            total += data[i].progress;
+        }
+
+        return [total, data.length];
+    } else {
+        let total = [0, 0];
+        for (let subData of Object.values(data)) {
+            const subDataArray = getSomeInformation(subData);
+            total[0] += subDataArray[0];
+            total[1] += subDataArray[1];
+        }
+        return total;
+    }
+}
+
+const resualt = getSomeInformation(students);
+
+console.log(resualt[0]/resualt[1]);
+
