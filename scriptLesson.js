@@ -867,3 +867,15 @@ const resualt = getSomeInformation(students);
 
 console.log(resualt[0]/resualt[1]);
 
+
+
+function loadScript(src) {
+    const script = document.createElement('script');
+    script.src = src;
+    script.async = false;
+    document.body.append(script);
+}
+
+loadScript("js/test.js");
+loadScript("js/anyOtherAdress.js");
+
