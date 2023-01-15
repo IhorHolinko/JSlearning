@@ -792,90 +792,170 @@
 
 // 
 
-function pow(x, n) {
-    let resualt = 1;
+// function pow(x, n) {
+//     let resualt = 1;
 
-    for (let i = 0; i < n; i++) {
-        resualt *= x;
-    }
-    return resualt;
-}
+//     for (let i = 0; i < n; i++) {
+//         resualt *= x;
+//     }
+//     return resualt;
+// }
 
-function pow(x, n) {
-    if (n === 1) {
-        return x;
-    } else {
-        return x * pow(x, n - 1);
-    }
-}
+// function pow(x, n) {
+//     if (n === 1) {
+//         return x;
+//     } else {
+//         return x * pow(x, n - 1);
+//     }
+// }
 
-console.log(pow(2, 2));
+// console.log(pow(2, 2));
 
-pow(2, 3);
+// pow(2, 3);
 
-pow(2, 4);
+// pow(2, 4);
 
 
-function getSomething(data) {
-    let total = 0;
-    let students = 0;
+// function getSomething(data) {
+//     let total = 0;
+//     let students = 0;
 
-    for (let course of Object.values(data)) {
-        if (Array.isArray(course)) {
-            students += course.length;
+//     for (let course of Object.values(data)) {
+//         if (Array.isArray(course)) {
+//             students += course.length;
             
-            for (let i = 0; i < course.length; i++) {
-                total += course[i].progress;
-            }
-        } else {
-            for (let subCourse of Object.values(course)) {
-                students += subCourse.length;
-                for (let i = 0; i < subCourse.length; i++) {
-                    total += subCourse[i].progress;
-                }
-            }
-        }
-    }
+//             for (let i = 0; i < course.length; i++) {
+//                 total += course[i].progress;
+//             }
+//         } else {
+//             for (let subCourse of Object.values(course)) {
+//                 students += subCourse.length;
+//                 for (let i = 0; i < subCourse.length; i++) {
+//                     total += subCourse[i].progress;
+//                 }
+//             }
+//         }
+//     }
 
-    return total / students;
-}
+//     return total / students;
+// }
 
-console.log(getSomething(students));
+// console.log(getSomething(students));
 
 
-function getSomeInformation(data) {
-    if (Array.isArray(data)) {
-        let total = 0;
+// function getSomeInformation(data) {
+//     if (Array.isArray(data)) {
+//         let total = 0;
                 
-        for (let i = 0; i < data.length; i++) {
-            total += data[i].progress;
-        }
+//         for (let i = 0; i < data.length; i++) {
+//             total += data[i].progress;
+//         }
 
-        return [total, data.length];
+//         return [total, data.length];
+//     } else {
+//         let total = [0, 0];
+//         for (let subData of Object.values(data)) {
+//             const subDataArray = getSomeInformation(subData);
+//             total[0] += subDataArray[0];
+//             total[1] += subDataArray[1];
+//         }
+//         return total;
+//     }
+// }
+
+// const resualt = getSomeInformation(students);
+
+// console.log(resualt[0]/resualt[1]);
+
+
+
+// function loadScript(src) {
+//     const script = document.createElement('script');
+//     script.src = src;
+//     script.async = false;
+//     document.body.append(script);
+// }
+
+// loadScript("js/test.js");
+// loadScript("js/anyOtherAdress.js");
+
+// const box = document.querySelector('.box');
+
+// const newHeight = 100;
+// const newWidth = 400;
+
+// function changeParams(elem, h, w) {
+//     elem.style.height = `${h ?? 200}px`;
+//     elem.style.width = `${w ?? 200}px`;
+//     elem.innerHTML = (h ?? 200) * (w ?? 200);
+// }
+
+// changeParams(box, newHeight, newWidth);
+
+
+// let userName; // ?? bring resualt, when it see null, undefined or NaN
+// let userKey;
+
+// console.log(userName ?? userKey ?? 'User');
+
+// const block = document.querySelector('.block');
+
+// if (block) {
+//     console.log(block.textContent);
+// }
+
+// console.log(userData?.skills?.js);
+
+const btns = document.querySelectorAll('button'),
+        wrapper = document.querySelector('.btn-block');
+
+console.log(btns[0].classList.length);
+console.log(btns[0].classList.item(1));
+console.log(btns[0].classList.add('red', 'sometext'));
+console.log(btns[0].classList.remove('blue'));
+console.log(btns[0].classList.toggle('blue'));
+
+if (btns[1].classList.contains('red')) {
+    console.log('red');
+}
+
+btns[0].addEventListener('click', () => {
+    if (!btns[1].classList.contains('red')) {
+        btns[1].classList.add('red');
     } else {
-        let total = [0, 0];
-        for (let subData of Object.values(data)) {
-            const subDataArray = getSomeInformation(subData);
-            total[0] += subDataArray[0];
-            total[1] += subDataArray[1];
-        }
-        return total;
+        btns[1].classList.remove('red');
     }
-}
 
-const resualt = getSomeInformation(students);
+    //or
 
-console.log(resualt[0]/resualt[1]);
+    btns[1].classList.toggle('red'); // but only for easy projects
+});
 
+console.log(btns[0].className); // old 
 
+wrapper.addEventListener('click', (event) => {
+    if (event.target && event.target.tagName == 'BUTTON') {
+        console.log('Hello');
+    }
+    
+    //or 
 
-function loadScript(src) {
-    const script = document.createElement('script');
-    script.src = src;
-    script.async = false;
-    document.body.append(script);
-}
+    // if (event.target && event.target.classList.contains('blue')) {
+    //     console.log('Hello');
+    // }
 
-loadScript("js/test.js");
-loadScript("js/anyOtherAdress.js");
+    // or from GOOGLE
+    if (event.target && event.target.matches('btn.red')) {
+        console.log('Hello');
+    }
+});
 
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        console.log('Hello');
+    });
+}); // it will not work
+
+const btn = document.createElement('button');
+btn.classList.add('red');
+wrapper.append(btn);
